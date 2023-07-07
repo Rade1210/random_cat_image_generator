@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./CatGenerator.module.css";
+import Image from "next/image";
 
 const RandomCatGenerator = () => {
   const [catImage, setCatImage] = useState("");
@@ -20,10 +21,18 @@ const RandomCatGenerator = () => {
   return (
     <div className={style.container}>
       {catImage && (
-        <img className={style.main_image} src={catImage} alt="Random cat" />
+        <Image
+          width={500}
+          height={500}
+          className={style.main_image}
+          src={catImage}
+          alt="Random cat"
+        />
       )}
       <br />
-      <button className={style.main_button} onClick={fetchCatImage}>Generisi sliku</button>
+      <button className={style.main_button} onClick={fetchCatImage}>
+        Generisi sliku
+      </button>
     </div>
   );
 };
